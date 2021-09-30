@@ -28,15 +28,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="gradeX">
-                    <td>1</td>
-                    <td>8992745560449</td>
-                    <td>Teh Botol Sosron </td>
-                    <td>Rp. 9000</td>
-                    <td>1</td>
-                    <td>Rp. 9000</td>
-                    <td><button class="btn btn-danger btn-rounded btn-xs" type="button"><i class="fa fa-trash"></i> Hapus</button></td>
-                  </tr>
+                  <form name="DaftarBelanja" method="GET"  enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <tr class="gradeX">
+                      <td>1</td>
+                      <td>8992745560449</td>
+                      <td>Teh Botol Sosron </td>
+                      <td><input type="number" class="col-sm-9 form-control" name="harga_brg" id="harga_brg" value="9000" onkeyup="sum();" readonly></td>
+                      <td><input type="number" class="col-sm-6 form-control" name="jml-brg" id="jml-brg" onkeyup="sum();"></td>
+                      <td><input type="number"  class="col-sm-9 form-control" name="jml_harga" id="jml_harga" onkeyup="copytextbox();" readonly> </td>
+                      <td><button class="btn btn-danger btn-rounded btn-xs" type="button"><i class="fa fa-trash"></i> Hapus</button></td>
+                    </tr>
+                  </form>
                 </tbody>
               </table>
             </div>
@@ -50,7 +53,7 @@
           </div>
           <div class="ibox-content">
             <span>Total</span>
-            <h2 class="font-bold">$390,00</h2>
+            <h2 class="font-bold"><input type="number"  class="col-sm-9 form-control" name="jml_harga_all" id="jml_harga_all" readonly></h2>
             <hr/>
             <div class="form-group row"><label class="col-sm-6 col-form-label">No Referensi </label>
   					  <input type="text" name="kode" id="kode" placeholder="Nomor Referensi EDC"  class="form-control" ></div>
@@ -87,5 +90,17 @@
 		  </div>
 		</div>
   </div>
-
+  <script>
+function sum() {
+      var txtFirstNumberValue = document.getElementById('harga_brg').value;
+      var txtSecondNumberValue = document.getElementById('jml-brg').value;
+      var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
+      if (!isNaN(result)) {
+         document.getElementById('jml_harga').value = result;
+      }
+}
+function copytextbox() {
+    document.getElementById('jml_harga_all').value = document.getElementById('jml_harga').value;
+  }
+</script>
 @endsection
