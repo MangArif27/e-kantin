@@ -26,13 +26,25 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="gradeX">
-                    <td>1</td>
-                    <td>899272700516</td>
-                    <td class="center">Pembersih Wajah</td>
-                    <td class="center">Biore Men Strip Black</td>
-                    <td><button class="btn btn-danger btn-rounded btn-xs" type="button"><i class="fa fa-trash"></i> Hapus</button> <button class="btn btn-primary btn-rounded btn-xs" type="button"><i class="fa fa-eye" aria-hidden="true"></i> Lihat</button></td>
-                  </tr>
+                  <?php $no = 0;?>
+                  @foreach($kode as $kode_brg)
+                  @foreach($barang as $brg)
+                    @if($kode_brg->kode==$brg->kode_brg)
+                      @foreach($kategori as $kategori_brg)
+                        @if($brg->kode_ktg==$kategori_brg->kode_ktg)
+                        <?php $no++ ;?>
+                        <tr class="gradeX">
+                          <td>{{ $no }}</td>
+                          <td>{{ $kode_brg->kode }}</td>
+                          <td class="center">{{ $kategori_brg->kategori }}</td>
+                          <td class="center">{{ $brg->nama_brg }}</td>
+                          <td><button class="btn btn-danger btn-rounded btn-xs" type="button"><i class="fa fa-trash"></i> Hapus</button> <button class="btn btn-primary btn-rounded btn-xs" type="button"><i class="fa fa-eye" aria-hidden="true"></i> Lihat</button></td>
+                        </tr>
+                        @endif
+                      @endforeach
+                    @endif
+                  @endforeach
+                  @endforeach
                 </tbody>
               </table>
             </div>
