@@ -21,7 +21,10 @@ class AdminController extends Controller
   }
   public function MasterKode()
   {
-    return view('web.page._master_kode');
+    $kode = DB::table('kode')->get();
+    $kategori = DB::table('kategori')->get();
+    $barang = DB::table('barang')->get();
+    return view('web.page._master_kode',['kode' => $kode, 'kategori' => $kategori,'barang' => $barang]);
   }
   public function MasterKategori()
   {
