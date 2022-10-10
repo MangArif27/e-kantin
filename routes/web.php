@@ -13,16 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 /* -------- Start Bagian Menu -------*/
-Route::get('/', 'AdminController@index');
-Route::get('Master-Kode', 'AdminController@MasterKode');
-Route::get('Master-Kategori', 'AdminController@MasterKategori');
-Route::get('Master-Satuan', 'AdminController@MasterSatuan');
-Route::get('Master-Suplier', 'AdminController@MasterSuplier');
-Route::get('Master-Barang', 'AdminController@MasterBarang');
-Route::get('Master-Pegawai', 'AdminController@MasterPegawai');
-Route::get('Master-Konsumen', 'AdminController@MasterKonsumen');
-Route::get('Penjualan', 'AdminController@Penjualan');
-Route::get('Top-Up-Brizzi', 'AdminController@TopUpBrizzi');
+Route::get('/', 'PageController@index');
+Route::get('Master-Kode', 'PageController@MasterKode');
+Route::get('Master-Kategori', 'PageController@MasterKategori');
+Route::get('Master-Satuan', 'PageController@MasterSatuan');
+Route::get('Master-Suplier', 'PageController@MasterSuplier');
+Route::get('Master-Barang', 'PageController@MasterBarang');
+Route::get('Master-Pegawai', 'PageController@MasterPegawai');
+Route::get('Master-Konsumen', 'PageController@MasterKonsumen');
+Route::get('Penjualan', 'PageController@Penjualan');
+Route::get('Top-Up-Brizzi', 'PageController@TopUpBrizzi');
 /* -------- End Bagian Menu -------*/
 /* -------- Proses Insert -------*/
 Route::post('Master-Kategori', 'AdminController@InsertKategori')->name('Insert.Kategori');

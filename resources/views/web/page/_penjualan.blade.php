@@ -5,7 +5,7 @@
       <div class="col-md-9">
         <div class="ibox ">
           <div class="ibox-title">
-            <h5>Daftar Pembelian ~ E-Kantin Lapas Kelas IIB Ciamis</h5>
+            <h5>Daftar Pembelian ~ E-Kantin</h5>
             <div class="ibox-tools">
               <a>
               <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#Pembelian"><i class="fa fa-plus"></i> Tambah Pembelian</button>

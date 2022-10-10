@@ -32,6 +32,7 @@
                     <th>Harga Beli</th>
                     <th>Harga Jual</th>
                     <th>Tanggal Input</th>
+                    <th>Tanggal Update</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -48,7 +49,8 @@
                     </br><button class="btn btn-warning  btn-xs">Jumlah </button> : {{$brg->jumlah}}  @foreach($satuan = DB::table('satuan')->where('kode_stn',$brg->kode_stn)->get() as $stn) {{$stn->nama_stn}} @endforeach</td>
                     <td>Rp. {{$brg->hrg_beli}}</td>
                     <td>Rp. {{$brg->hrg_jual}}</td>
-                    <td>{{$brg->tanggal}}</td>
+                    <td>{{$brg->created_at}}</td>
+                    <td>{{$brg->updated_at}}</td>
                     <td><a href="Delete-Barang/{{ $brg->kode_brg }}"><button class="btn btn-danger btn-rounded btn-xs" type="button"><i class="fa fa-trash"></i> Hapus</button></a>
                     <button class="btn btn-primary btn-rounded btn-xs" data-toggle="modal" data-target="#LihatBarang{{$brg->kode_brg}}" type="button"><i class="fa fa-eye" aria-hidden="true"></i> Lihat</button>
                     <button class="btn btn-info btn-rounded btn-xs" type="button" data-toggle="modal" data-target="#UpdateBarang{{$brg->kode_brg}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update</button>
@@ -74,14 +76,14 @@
           {{ csrf_field() }}
   			  <div class="modal-body">
   				  <div class="form-group row"><label class="col-sm-4 col-form-label">Kode Barang</label>
-  					  <div class="col-sm-8"><input type="text" name="kode_brg" onkeyup="isi_otomatis()" id="keyword"  class="form-control" ></div>
+  					  <div class="col-sm-8"><input type="text" name="KodeBarang" onkeyup="isi_otomatis()" id="keyword"  class="form-control" ></div>
             </div>
   				  <div class="form-group row"><label class="col-sm-4 col-form-label">Nama Barang</label>
-  					  <div class="col-sm-8"><input type="text" name="nama_barang" id="nama_barang" placeholder="Nama Barang" class="form-control"></div>
+  					  <div class="col-sm-8"><input type="text" name="NamaBarang" id="NamaBarang" placeholder="Nama Barang" class="form-control"></div>
             </div>
             <div class="form-group row"><label class="col-sm-4 col-form-label">Kategori Barang</label>
   					  <div class="col-sm-8">
-                <select class="chosen-select form-control" name="kategori_brg" tabindex="2">
+                <select class="chosen-select form-control" name="KategoriBarang" tabindex="2">
                   <option disabled selected>~ Pilih Kategori Barang ~</option>
                   @foreach($kategori as $ktg)
                   <option value="{{$ktg->kode_ktg}}">{{$ktg->kategori}}</option>
@@ -91,7 +93,7 @@
             </div>
             <div class="form-group row"><label class="col-sm-4 col-form-label">Suplier Barang</label>
   					  <div class="col-sm-8">
-                <select class="chosen-select form-control" name="suplier_barang">
+                <select class="chosen-select form-control" name="SuplierBarang">
                   <option disabled selected>~ Pilih Suplier Barang ~</option>
                   @foreach($suplier as $spl)
                   <option value="{{$spl->kode_spl}}">{{$spl->nama_spl}}</option>
@@ -100,9 +102,9 @@
               </div>
             </div>
             <div class="form-group row"><label class="col-sm-4 col-form-label">Jumlah Barang</label>
-  					  <div class="col-sm-3"><input type="text" name="jumlah_barang" id="jumlah_barang" placeholder="Jumlah Barang" class="form-control"></div>
+  					  <div class="col-sm-3"><input type="text" name="JumlahBarang" id="JumlahBarang" placeholder="Jumlah Barang" class="form-control"></div>
               <div class="col-sm-5">
-                <select class="form-control " name="satuan_barang" placeholder="Satuan Barang">
+                <select class="form-control " name="SatuanBarang" placeholder="Satuan Barang">
                   <option disabled selected>~ Pilih Satuan Barang ~</option>
                   @foreach($satuan as $stn)
                   <option value="{{$stn->kode_stn}}">{{$stn->nama_stn}}</option>
@@ -111,10 +113,10 @@
               </div>
             </div>
             <div class="form-group row"><label class="col-sm-4 col-form-label">Harga Beli Barang</label>
-  					  <div class="col-sm-8"><input type="text" name="nama_beli_barang" id="harga_beli_barang" placeholder="Nama Barang" class="form-control"></div>
+  					  <div class="col-sm-8"><input type="number" name="HargaBeliBarang" id="HargaBeliBarang" placeholder="Harga Beli Barang" class="form-control"></div>
             </div>
             <div class="form-group row"><label class="col-sm-4 col-form-label">Harga Jual Barang</label>
-  					  <div class="col-sm-8"><input type="text" name="nama_jual_barang" id="harga_jual_barang" placeholder="Nama Barang" class="form-control"></div>
+  					  <div class="col-sm-8"><input type="number" name="HargaJualBarang" id="HargaJualBarang" placeholder="Harga Jual Barang" class="form-control"></div>
             </div>
     			  <div class="modal-footer">
     				  <button type="submit" class="btn btn-primary"><i class="fa fa-save"> Simpan</i></button>

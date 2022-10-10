@@ -5,7 +5,7 @@
       <div class="col-lg-12">
         <div class="ibox ">
           <div class="ibox-title">
-            <h5>Master Konsumen ~ E-Kantin Lapas Kelas IIB Ciamis</h5>
+            <h5>Master Konsumen ~ E-Kantin</h5>
             <div class="ibox-tools">
               <a>
               <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#Konsumen"><i class="fa fa-plus"></i> Tambah konsumen</button>
@@ -70,19 +70,19 @@
           {{ csrf_field() }}
   			  <div class="modal-body">
   				  <div class="form-group row"><label class="col-sm-4 col-form-label">No Identitas</label>
-  					  <div class="col-sm-8"><input type="text" name="nip" id="nip" placeholder="No Identitas"  class="form-control" ></div>
+  					  <div class="col-sm-8"><input type="text" name="NoIdentitasKonsumen" id="NoIdentitasKonsumen" placeholder="No Identitas"  class="form-control" ></div>
             </div>
   				  <div class="form-group row"><label class="col-sm-4 col-form-label">Nama Konsumen</label>
-  					  <div class="col-sm-8"><input type="text" name="nama_konsumen" id="nama_konsumen" placeholder="Nama Konsumen" class="form-control"></div>
+  					  <div class="col-sm-8"><input type="text" name="NamaKonsumen" id="NamaKonsumen" placeholder="Nama Konsumen" class="form-control"></div>
             </div>
-            <div class="form-group row"><label class="col-sm-4 col-form-label">No Brizzi</label>
-  					  <div class="col-sm-8"><input type="number" name="no_brizzi" id="no_brizzi" placeholder="NO Brizzi" class="form-control"></div>
+            <div class="form-group row"><label class="col-sm-4 col-form-label">E-Money</label>
+  					  <div class="col-sm-8"><input type="number" name="NoEMoney" id="NoEMoney" placeholder="NO Brizzi" class="form-control"></div>
             </div>
             <div class="form-group row"><label class="col-sm-4 col-form-label">Saldo</label>
-  					  <div class="col-sm-8"><input type="number" name="saldo" id="saldo" placeholder="Saldo" class="form-control"></div>
+  					  <div class="col-sm-8"><input type="number" name="Saldo" id="Saldo" placeholder="Saldo" class="form-control"></div>
             </div>
             <div class="form-group row"><label class="col-sm-4 col-form-label">Foto</label>
-  					  <div class="col-sm-8"><input type="file" name="foto" id="foto" placeholder="Foto" class="form-control"></div>
+  					  <div class="col-sm-8"><input type="file" name="Foto" id="Foto" placeholder="Foto" class="form-control"></div>
             </div>
     			  <div class="modal-footer">
     				  <button type="submit" class="btn btn-primary"><i class="fa fa-save"> Simpan</i></button>

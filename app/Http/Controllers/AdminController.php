@@ -14,60 +14,6 @@ use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
-  /* -------- Start Bagian Menu -------*/
-  public function index()
-  {
-    return view('web.page._index');
-  }
-  public function MasterKode()
-  {
-    $kode = DB::table('kode')->get();
-    $kategori = DB::table('kategori')->get();
-    $barang = DB::table('barang')->get();
-    return view('web.page._master_kode',['kode' => $kode, 'kategori' => $kategori,'barang' => $barang]);
-  }
-  public function MasterKategori()
-  {
-    $kategori = DB::table('kategori')->get();
-    return view('web.page._master_kategori',['kategori' => $kategori]);
-  }
-  public function MasterSatuan()
-  {
-    $satuan = DB::table('satuan')->get();
-    return view('web.page._master_satuan',['satuan' => $satuan]);
-  }
-  public function MasterSuplier()
-  {
-    $suplier = DB::table('suplier')->get();
-    return view('web.page._master_suplier',['suplier' => $suplier]);
-  }
-  public function MasterBarang()
-  {
-    $satuan = DB::table('satuan')->get();
-    $kategori = DB::table('kategori')->get();
-    $suplier = DB::table('suplier')->get();
-    $barang = DB::table('barang')->get();
-    return view('web.page._master_barang',['barang' => $barang,'kategori' => $kategori,'suplier' => $suplier,'satuan' => $satuan]);
-  }
-  public function MasterKonsumen()
-  {
-    $konsumen = DB::table('konsumen')->get();
-    return view('web.page._master_konsumen',['konsumen' => $konsumen]);
-  }
-  public function MasterPegawai()
-  {
-    $pegawai = DB::table('pegawai')->get();
-    return view('web.page._master_pegawai',['pegawai' => $pegawai]);
-  }
-  public function Penjualan()
-  {
-    return view('web.page._penjualan');
-  }
-  public function TopUpBrizzi()
-  {
-    return view('web.page._top_up');
-  }
-  /* -------- End Bagian Menu -------*/
   /* -------- Proses Insert -------*/
   public function InsertKategori(Request $request)
   {
@@ -87,7 +33,7 @@ class AdminController extends Controller
     }
     DB::table('kategori')->insert([
       'kode_ktg'=>$kd,
-      'kategori' => $request->nama_kategori,
+      'kategori' => $request->NamaKategori,
     ]);
     Session::flash('sukses','Anda Berhasil Input Data!');
     return redirect('/Master-Kategori');
@@ -110,7 +56,7 @@ class AdminController extends Controller
     }
     DB::table('satuan')->insert([
       'kode_stn'=>$kd,
-      'nama_stn' => $request->nama_satuan,
+      'nama_stn' => $request->NamaSatuanBarang,
     ]);
     Session::flash('sukses','Anda Berhasil Input Data!');
     return redirect('/Master-Satuan');
@@ -133,9 +79,9 @@ class AdminController extends Controller
     }
     DB::table('suplier')->insert([
       'kode_spl'=>$kd,
-      'nama_spl' => $request->nama_spl,
-      'alamat_spl' => $request->alamat_spl,
-      'no_telp_spl' => $request->no_telp,
+      'nama_spl' => $request->NamaSuplier,
+      'alamat_spl' => $request->AlamatSuplier,
+      'no_telp_spl' => $request->NoTelpSuplier,
     ]);
     Session::flash('sukses','Anda Berhasil Input Data!');
     return redirect('/Master-Suplier');
@@ -143,38 +89,41 @@ class AdminController extends Controller
   public function InsertBarang(Request $request)
   {
     date_default_timezone_set('Asia/Jakarta');
-    $tanggal=date('Y-m-d H:m:s');
-    $data=DB::table('kode')->where('kode',$request->kode_brg)->first();
+    $Created_At=date('Y-m-d H:m:s');
+    $Updated_At=date('Y-m-d H:m:s');
+    $data=DB::table('kode')->where('kode',$request->KodeBarang)->first();
       if($data)
       {
         DB::table('barang')->insert([
-          'kode_brg'=>$request->kode_brg,
-          'nama_brg' => $request->nama_barang,
-          'kode_ktg' => $request->kategori_brg,
-          'kode_spl' => $request->suplier_barang,
-          'jumlah' => $request->jumlah_barang,
-          'kode_stn' => $request->satuan_barang,
-          'hrg_beli' => $request->nama_beli_barang,
-          'hrg_jual' => $request->nama_jual_barang,
-          'tanggal' => $tanggal,
+          'kode_brg'=>$request->KodeBarang,
+          'nama_brg' => $request->NamaBarang,
+          'kode_ktg' => $request->KategoriBarang,
+          'kode_spl' => $request->SuplierBarang,
+          'jumlah' => $request->JumlahBarang,
+          'kode_stn' => $request->SatuanBarang,
+          'hrg_beli' => $request->HargaBeliBarang,
+          'hrg_jual' => $request->HargaJualBarang,
+          'created_at' => $Created_At,
+          'updated_at' => $Updated_At,
         ]);
         Session::flash('sukses','Anda Berhasil Input Data!');
         return redirect('/Master-Barang');
       }
     else {
       DB::table('kode')->insert([
-        'kode'=>$request->kode_brg,
+        'kode'=>$request->KodeBarang,
         ]);
       DB::table('barang')->insert([
-        'kode_brg'=>$request->kode_brg,
-        'nama_brg' => $request->nama_barang,
-        'kode_ktg' => $request->kategori_brg,
-        'kode_spl' => $request->suplier_barang,
-        'jumlah' => $request->jumlah_barang,
-        'kode_stn' => $request->satuan_barang,
-        'hrg_beli' => $request->nama_beli_barang,
-        'hrg_jual' => $request->nama_jual_barang,
-        'tanggal' => $tanggal,
+        'kode_brg'=>$request->KodeBarang,
+          'nama_brg' => $request->NamaBarang,
+          'kode_ktg' => $request->KategoriBarang,
+          'kode_spl' => $request->SuplierBarang,
+          'jumlah' => $request->JumlahBarang,
+          'kode_stn' => $request->SatuanBarang,
+          'hrg_beli' => $request->HargaBeliBarang,
+          'hrg_jual' => $request->HargaJualBarang,
+          'created_at' => $Created_At,
+          'updated_at' => $Updated_At,
       ]);
       Session::flash('sukses','Anda Berhasil Input Data!');
       return redirect('/Master-Barang');

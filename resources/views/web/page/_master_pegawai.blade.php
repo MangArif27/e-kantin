@@ -5,7 +5,7 @@
       <div class="col-lg-12">
         <div class="ibox ">
           <div class="ibox-title">
-            <h5>Master Pegawai ~ E-Kantin Lapas Kelas IIB Ciamis</h5>
+            <h5>Master Pegawai ~ E-Kantin</h5>
             <div class="ibox-tools">
               <a>
               <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#Pegawai"><i class="fa fa-plus"></i> Tambah Pegawai</button>

@@ -61,10 +61,10 @@
           {{ csrf_field() }}
   			  <div class="modal-body">
   				  <div class="form-group row"><label class="col-sm-4 col-form-label">Kode Kategori</label>
-  					  <div class="col-sm-8"><input type="text" name="kategori" id="kategori" placeholder="Akan Di Generate Automatis" class="form-control" disabled></div>
+  					  <div class="col-sm-8"><input type="text" name="KodeKategori" id="KodeKategori" placeholder="Akan Di Generate Automatis" class="form-control" disabled></div>
             </div>
   				  <div class="form-group row"><label class="col-sm-4 col-form-label">Nama Kategori Barang</label>
-  					  <div class="col-sm-8"><input type="text" name="nama_kategori" id="nama_kategori" placeholder="Nama Kategori Barang" class="form-control"></div>
+  					  <div class="col-sm-8"><input type="text" name="NamaKategori" id="NamaKategori" placeholder="Nama Kategori Barang" class="form-control"></div>
             </div>
     			  <div class="modal-footer">
     				  <button type="submit" class="btn btn-primary"><i class="fa fa-save"> Simpan</i></button>

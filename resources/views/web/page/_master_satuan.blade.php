@@ -5,7 +5,7 @@
       <div class="col-lg-12">
         <div class="ibox ">
           <div class="ibox-title">
-            <h5>Master Satuan Barang ~ E-Kantin Lapas Kelas IIB Ciamis</h5>
+            <h5>Master Satuan Barang ~ E-Kantin</h5>
             <div class="ibox-tools">
               <a>
               <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#Satuan"><i class="fa fa-plus"></i> Tambah Satuan</button>
@@ -60,11 +60,11 @@
         <form method="POST" action="{{ route('Insert.Satuan') }}"  method="POST" enctype="multipart/form-data">
           {{ csrf_field() }}
   			  <div class="modal-body">
-  				  <div class="form-group row"><label class="col-sm-4 col-form-label">Kode Kategori</label>
-  					  <div class="col-sm-8"><input type="text" name="kategori" id="kategori" placeholder="Akan Di Generate Automatis" class="form-control" disabled></div>
+  				  <div class="form-group row"><label class="col-sm-4 col-form-label">Kode Satuan</label>
+  					  <div class="col-sm-8"><input type="text" name="KodeSatuan" id="KodeSatuan" placeholder="Akan Di Generate Automatis" class="form-control" disabled></div>
             </div>
-  				  <div class="form-group row"><label class="col-sm-4 col-form-label">Nama Kategori Barang</label>
-  					  <div class="col-sm-8"><input type="text" name="nama_satuan" id="nama_satuan" placeholder="Nama Kategori Barang" class="form-control"></div>
+  				  <div class="form-group row"><label class="col-sm-4 col-form-label">Nama Satuan Barang</label>
+  					  <div class="col-sm-8"><input type="text" name="NamaSatuanBarang" id="NamaSatuanBarang" placeholder="Nama Kategori Barang" class="form-control"></div>
             </div>
     			  <div class="modal-footer">
     				  <button type="submit" class="btn btn-primary"><i class="fa fa-save"> Simpan</i></button>

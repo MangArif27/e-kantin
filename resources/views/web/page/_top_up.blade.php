@@ -5,7 +5,7 @@
       <div class="col-lg-12">
         <div class="ibox ">
           <div class="ibox-title">
-            <h5>History Top Up Brizzi ~ E-Kantin Lapas Kelas IIB Ciamis</h5>
+            <h5>History Top Up ~ E-Kantin</h5>
             <div class="ibox-tools">
               <a>
               <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#TopUp"><i class="fa fa-plus"></i> Top Up</button>
@@ -54,22 +54,22 @@
 			  </div>
 			  <div class="modal-body">
           <div class="form-group row"><label class="col-sm-4 col-form-label">No Brizzi</label>
-					  <div class="col-sm-8"><input type="number" name="no_brizzi" id="no_brizzi" placeholder="NO Brizzi" class="form-control"></div>
+					  <div class="col-sm-8"><input type="number" name="NoEMoney" id="NoEMoney" placeholder="NO Brizzi" class="form-control"></div>
           </div>
 				  <div class="form-group row"><label class="col-sm-4 col-form-label">No Identitas</label>
-					  <div class="col-sm-8"><input type="text" name="nip" id="nip" placeholder="No Identitas"  class="form-control" readonly></div>
+					  <div class="col-sm-8"><input type="text" name="NoIdentitasKonsumen" id="NoIdentitasKonsumen" placeholder="No Identitas"  class="form-control" readonly></div>
           </div>
 				  <div class="form-group row"><label class="col-sm-4 col-form-label">Nama Konsumen</label>
-					  <div class="col-sm-8"><input type="text" name="nama_konsumen" id="nama_konsumen" placeholder="Nama Konsumen" readonly class="form-control"></div>
+					  <div class="col-sm-8"><input type="text" name="NamaKonsumen" id="NamaKonsumen" placeholder="Nama Konsumen" readonly class="form-control"></div>
           </div>
           <div class="form-group row"><label class="col-sm-4 col-form-label">Saldo</label>
-					  <div class="col-sm-8"><input type="number" name="saldo" id="saldo" placeholder="Saldo" class="form-control" readonly></div>
+					  <div class="col-sm-8"><input type="number" name="Saldo" id="Saldo" placeholder="Saldo" class="form-control" readonly></div>
           </div>
           <div class="form-group row"><label class="col-sm-4 col-form-label">Top Up Saldo</label>
-					  <div class="col-sm-8"><input type="number" name="saldo" id="saldo" placeholder="Saldo" class="form-control" ></div>
+					  <div class="col-sm-8"><input type="number" name="SaldoTopUp" id="SaldoTopUp" placeholder="Saldo" class="form-control" ></div>
           </div>
           <div class="form-group row"><label class="col-sm-4 col-form-label">Nomor Referensi</label>
-					  <div class="col-sm-8"><input type="text" name="no_referensi" id="no_referensi" placeholder="Saldo" class="form-control"></div>
+					  <div class="col-sm-8"><input type="text" name="NoReferensi" id="NoReferensi" placeholder="Saldo" class="form-control"></div>
           </div>
   			  <div class="modal-footer">
   				  <button type="submit" class="btn btn-primary"><i class="fa fa-save"> Simpan</i></button>

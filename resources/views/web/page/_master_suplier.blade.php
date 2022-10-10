@@ -5,7 +5,7 @@
       <div class="col-lg-12">
         <div class="ibox ">
           <div class="ibox-title">
-            <h5>Master Suplier ~ E-Kantin Lapas Kelas IIB Ciamis</h5>
+            <h5>Master Suplier ~ E-Kantin</h5>
             <div class="ibox-tools">
               <a>
               <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#Suplier"><i class="fa fa-plus"></i> Tambah Suplier</button>
@@ -65,16 +65,16 @@
           {{ csrf_field() }}
   			  <div class="modal-body">
   				  <div class="form-group row"><label class="col-sm-4 col-form-label">Kode Suplier</label>
-  					  <div class="col-sm-8"><input type="text" name="kategori" id="kategori" placeholder="Akan Di Generate Automatis" class="form-control" disabled></div>
+  					  <div class="col-sm-8"><input type="text" name="KodeSuplier" id="KodeSuplier" placeholder="Akan Di Generate Automatis" class="form-control" disabled></div>
             </div>
   				  <div class="form-group row"><label class="col-sm-4 col-form-label">Nama Suplier</label>
-  					  <div class="col-sm-8"><input type="text" name="nama_spl" id="nama_spl" placeholder="Nama Suplier" class="form-control"></div>
+  					  <div class="col-sm-8"><input type="text" name="NamaSuplier" id="NamaSuplier" placeholder="Nama Suplier" class="form-control"></div>
             </div>
             <div class="form-group row"><label class="col-sm-4 col-form-label">Alamat Suplier</label>
-  					  <div class="col-sm-8"><textarea name="alamat_spl" id="alamat_spl" placeholder="Alamat Suplier" class="form-control"></textarea></div>
+  					  <div class="col-sm-8"><textarea name="AlamatSuplier" id="AlamatSuplier" placeholder="Alamat Suplier" class="form-control"></textarea></div>
             </div>
             <div class="form-group row"><label class="col-sm-4 col-form-label">Telphone</label>
-  					  <div class="col-sm-8"><input type="number" name="no_telp" id="no_telp" placeholder="Telphone Suplier" class="form-control"></div>
+  					  <div class="col-sm-8"><input type="number" name="NoTelpSuplier" id="NoTelpSuplier" placeholder="Telphone Suplier" class="form-control"></div>
             </div>
     			  <div class="modal-footer">
     				  <button type="submit" class="btn btn-primary"><i class="fa fa-save"> Simpan</i></button>
