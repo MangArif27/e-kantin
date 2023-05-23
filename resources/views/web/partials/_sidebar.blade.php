@@ -8,7 +8,7 @@
                 </div>
             </li>
             <li class="active">
-              <a href="/"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
+                <a href="/"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-database"></i> <span class="nav-label">Master Data</span><span class="fa arrow"></span></a>
@@ -26,6 +26,7 @@
                 <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Transaksi </span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a href="Penjualan">Penjualan</a></li>
+                    <li><a href="Data-Penjualan">Data Penjualan</a></li>
                     <li><a href="Top-Up-Brizzi">Top Up Brizzi</a></li>
                 </ul>
             </li>

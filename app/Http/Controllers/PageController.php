@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Session;
 
 class PageController extends Controller
 {
-      /* -------- Start Bagian Menu -------*/
+  /* -------- Start Bagian Menu -------*/
   public function index()
   {
     return view('web.page._index');
@@ -20,22 +20,22 @@ class PageController extends Controller
     $kode = DB::table('kode')->get();
     $kategori = DB::table('kategori')->get();
     $barang = DB::table('barang')->get();
-    return view('web.page._master_kode',['kode' => $kode, 'kategori' => $kategori,'barang' => $barang]);
+    return view('web.page._master_kode', ['kode' => $kode, 'kategori' => $kategori, 'barang' => $barang]);
   }
   public function MasterKategori()
   {
     $kategori = DB::table('kategori')->get();
-    return view('web.page._master_kategori',['kategori' => $kategori]);
+    return view('web.page._master_kategori', ['kategori' => $kategori]);
   }
   public function MasterSatuan()
   {
     $satuan = DB::table('satuan')->get();
-    return view('web.page._master_satuan',['satuan' => $satuan]);
+    return view('web.page._master_satuan', ['satuan' => $satuan]);
   }
   public function MasterSuplier()
   {
     $suplier = DB::table('suplier')->get();
-    return view('web.page._master_suplier',['suplier' => $suplier]);
+    return view('web.page._master_suplier', ['suplier' => $suplier]);
   }
   public function MasterBarang()
   {
@@ -43,21 +43,22 @@ class PageController extends Controller
     $kategori = DB::table('kategori')->get();
     $suplier = DB::table('suplier')->get();
     $barang = DB::table('barang')->get();
-    return view('web.page._master_barang',['barang' => $barang,'kategori' => $kategori,'suplier' => $suplier,'satuan' => $satuan]);
+    return view('web.page._master_barang', ['barang' => $barang, 'kategori' => $kategori, 'suplier' => $suplier, 'satuan' => $satuan]);
   }
   public function MasterKonsumen()
   {
     $konsumen = DB::table('konsumen')->get();
-    return view('web.page._master_konsumen',['konsumen' => $konsumen]);
+    return view('web.page._master_konsumen', ['konsumen' => $konsumen]);
   }
   public function MasterPegawai()
   {
     $pegawai = DB::table('pegawai')->get();
-    return view('web.page._master_pegawai',['pegawai' => $pegawai]);
+    return view('web.page._master_pegawai', ['pegawai' => $pegawai]);
   }
   public function Penjualan()
   {
-    return view('web.page._penjualan');
+    $barang = DB::table('barang')->get();
+    return view('web.page._penjualan', ['barang' => $barang]);
   }
   public function TopUpBrizzi()
   {

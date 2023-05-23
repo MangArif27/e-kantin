@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 /* -------- Start Bagian Menu -------*/
+
 Route::get('/', 'PageController@index');
 Route::get('Master-Kode', 'PageController@MasterKode');
 Route::get('Master-Kategori', 'PageController@MasterKategori');
@@ -25,20 +26,22 @@ Route::get('Penjualan', 'PageController@Penjualan');
 Route::get('Top-Up-Brizzi', 'PageController@TopUpBrizzi');
 /* -------- End Bagian Menu -------*/
 /* -------- Proses Insert -------*/
-Route::post('Master-Kategori', 'AdminController@InsertKategori')->name('Insert.Kategori');
-Route::post('Master-Satuan', 'AdminController@InsertSatuan')->name('Insert.Satuan');
-Route::post('Master-Suplier', 'AdminController@InsertSuplier')->name('Insert.Suplier');
-Route::post('Master-Barang', 'AdminController@InsertBarang')->name('Insert.Barang');
-Route::post('Master-Pegawai', 'AdminController@InsertPegawai')->name('Insert.Pegawai');
-Route::post('Master-Konsumen', 'AdminController@InsertKonsumen')->name('Insert.Konsumen');
+Route::post('Master-Kategori', 'InsertController@InsertKategori')->name('Insert.Kategori');
+Route::post('Master-Satuan', 'InsertController@InsertSatuan')->name('Insert.Satuan');
+Route::post('Master-Suplier', 'InsertController@InsertSuplier')->name('Insert.Suplier');
+Route::post('Master-Barang', 'InsertController@InsertBarang')->name('Insert.Barang');
+Route::post('Master-Pegawai', 'InsertController@InsertPegawai')->name('Insert.Pegawai');
+Route::post('Master-Konsumen', 'InsertController@InsertKonsumen')->name('Insert.Konsumen');
+Route::post('Penjualan', 'InsertController@InsertNotaPenjualan')->name('Insert.Nota.Penjualan');
 /* -------- End Proses Insert -------*/
 /* -------- Proses Delete -------*/
-Route::get('Delete-Kategori/{kode}', 'AdminController@DeleteKategori');
-Route::get('Delete-Suplier/{kode}', 'AdminController@DeleteSuplier');
-Route::get('Delete-Pegawai/{nip}', 'AdminController@DeletePegawai');
-Route::get('Delete-Konsumen/{nip}', 'AdminController@DeleteKonsumen');
-Route::get('Delete-Barang/{kode}', 'AdminController@DeleteBarang');
+Route::get('Delete-Kategori/{kode}', 'DeleteController@DeleteKategori');
+Route::get('Delete-Suplier/{kode}', 'DeleteController@DeleteSuplier');
+Route::get('Delete-Pegawai/{nip}', 'DeleteController@DeletePegawai');
+Route::get('Delete-Konsumen/{nip}', 'DeleteController@DeleteKonsumen');
+Route::get('Delete-Barang/{kode}', 'DeleteController@DeleteBarang');
 /* -------- End Delete -------*/
 /* -------- Proses Search -------*/
 Route::get('autocomplete/search', 'AdminController@autocomplete');
+Route::get('GetBarang/{id}', 'AdminController@GetBarang');
 /* -------- End Proses Search -------*/
