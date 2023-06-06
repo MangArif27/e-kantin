@@ -178,20 +178,47 @@ class InsertController extends Controller
     public function InsertNotaPenjualan(Request $request)
     {
         $Datenow = date('Y-m-d');
-        if ($request->Status == "Insert") {
-            DB::table('penjualan')->insert([
-                'kode_barang' => $request->KodeBarang,
-                'kode_nota' => $request->Nota,
-                'toko' => "AB",
-                'harga' => $request->harga_brg,
-                'jumlah' => "1",
-                'total_harga' => $request->harga_brg,
-                'tipe_bayar' => "-",
-                'status' => "Belum Bayar",
-                'tanggal' => $Datenow,
-            ]);
+        DB::table('penjualan')->insert([
+            'kode_barang' => $request->KodeBarang,
+            'no_urut_nota' => $request->NoUrutNota,
+            'kode_nota' => $request->Nota,
+            'toko' => "AB",
+            'harga' => $request->harga_brg,
+            'jumlah' => "1",
+            'total_harga' => $request->harga_brg,
+            'tipe_bayar' => "-",
+            'status' => "Belum Bayar",
+            'tanggal' => $Datenow,
+        ]);
+        Session::flash('sukses', 'Anda Berhasil Input Data!');
+        return redirect('/Penjualan');
+    }
+    public function InsertPenjualan(Request $request)
+    {
+        $Datenow = date('Y-m-d');
+        if ($request->TipeBayar == "Tunai") {
+            $Status = "Lunas";
+            $JumlahDibayar = $request->JumlahDibayar;
+            $JumlahKembalian = $request->JumlahKembalian;
+        } else {
+            $Status = "Belum Lunas";
+            $JumlahDibayar = "-";
+            $JumlahKembalian = "-";
         }
-
+        DB::table('data_penjualan')->insert([
+            'kode_nota' => $request->KodeNota,
+            'jumlah_barang' =>  $request->JumlahBarang,
+            'total_harga' => $request->jml_harga_all,
+            'jumlah_bayar' => $JumlahDibayar,
+            'kembalian' => $JumlahKembalian,
+            'identitas_pembeli' => "-",
+            'tipe_bayar' => $request->TipeBayar,
+            'status' => $Status,
+            'keterangan' => "-",
+        ]);
+        DB::table('penjualan')->where('kode_nota', $request->KodeNota)->update([
+            'status' => "Belum Lunas",
+        ]);
         Session::flash('sukses', 'Anda Berhasil Input Data!');
         return redirect('/Penjualan');
     }

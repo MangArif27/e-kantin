@@ -33,6 +33,7 @@ Route::post('Master-Barang', 'InsertController@InsertBarang')->name('Insert.Bara
 Route::post('Master-Pegawai', 'InsertController@InsertPegawai')->name('Insert.Pegawai');
 Route::post('Master-Konsumen', 'InsertController@InsertKonsumen')->name('Insert.Konsumen');
 Route::post('Penjualan', 'InsertController@InsertNotaPenjualan')->name('Insert.Nota.Penjualan');
+Route::post('Data-Penjualan', 'InsertController@InsertPenjualan')->name('Insert.Penjualan');
 /* -------- End Proses Insert -------*/
 /* -------- Proses Delete -------*/
 Route::get('Delete-Kategori/{kode}', 'DeleteController@DeleteKategori');
@@ -40,6 +41,9 @@ Route::get('Delete-Suplier/{kode}', 'DeleteController@DeleteSuplier');
 Route::get('Delete-Pegawai/{nip}', 'DeleteController@DeletePegawai');
 Route::get('Delete-Konsumen/{nip}', 'DeleteController@DeleteKonsumen');
 Route::get('Delete-Barang/{kode}', 'DeleteController@DeleteBarang');
+/* -------- End Delete -------*/
+/* -------- Proses Update -------*/
+Route::post('Update-Nota', 'UpdateController@UpdatePenjualanNota')->name('Update.Nota.Penjualan');
 /* -------- End Delete -------*/
 /* -------- Proses Search -------*/
 Route::get('autocomplete/search', 'AdminController@autocomplete');

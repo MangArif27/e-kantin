@@ -57,8 +57,10 @@ class PageController extends Controller
   }
   public function Penjualan()
   {
+    $date = date('Y-m-d');
+    $penjualan = DB::table('penjualan')->where('tanggal', $date)->where('status', "Belum Bayar")->where('toko', "AB")->get();
     $barang = DB::table('barang')->get();
-    return view('web.page._penjualan', ['barang' => $barang]);
+    return view('web.page._penjualan', ['barang' => $barang, 'penjualan' => $penjualan]);
   }
   public function TopUpBrizzi()
   {
